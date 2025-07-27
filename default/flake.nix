@@ -2,20 +2,20 @@
   description = "system configuration for ..."; # TODO: update me! (e.g. the hostname)
 
   inputs = {
-    darwin.url = "github:LnL7/nix-darwin";
+    darwin.url = "github:nix-darwin/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:nix-community/home-manager/release-22.11";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-index-database.url = "github:Mic92/nix-index-database";
+    nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
     nixpkgs.url = "github:NixOS/nixpkgs/..."; # TODO: update me! (e.g. `nixos-22.11`, `nixpkgs-22.11-darwin`)
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/..."; # TODO: update me! (e.g. `nixos-unstable`, `nixpkgs-unstable`)
 
-    sys.url = "github:sersorrel/sys";
+    sys.url = "github:keysmashes/sys";
   };
 
   outputs = inputs: let
