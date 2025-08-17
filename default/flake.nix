@@ -15,7 +15,7 @@
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/..."; # TODO: update me! (e.g. `nixos-unstable`, `nixpkgs-unstable`)
 
-    sys.url = "github:keysmashes/sys";
+    sys.url = "git+https://codeberg.org/keysmashes/sys.git";
   };
 
   outputs = inputs: let
