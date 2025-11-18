@@ -13,8 +13,6 @@
 
     nixpkgs.url = "github:NixOS/nixpkgs/..."; # TODO: update me! (e.g. `nixos-22.11`, `nixpkgs-22.11-darwin`)
 
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/..."; # TODO: update me! (e.g. `nixos-unstable`, `nixpkgs-unstable`)
-
     sys.url = "git+https://codeberg.org/keysmashes/sys.git";
   };
 
@@ -26,7 +24,6 @@
       inputs = { inherit inputs; };
       modules = [ ({ config, ... }: {
         imports = [ inputs.sys.darwinModules.default ];
-        _module.args = { unstable = import inputs.nixpkgs-unstable { inherit system; inherit (config.nixpkgs) config overlays; }; };
         system.stateVersion = 4;
       }) ];
     };
@@ -35,7 +32,6 @@
       extraSpecialArgs = { inherit inputs; };
       modules = [ ({ config, ... }: {
         imports = [ inputs.sys.homeModules.default ];
-        _module.args = { unstable = import inputs.nixpkgs-unstable { inherit system; inherit (config.nixpkgs) config overlays; }; };
         home.homeDirectory = "..."; # TODO: update me!
         home.username = "..."; # TODO: update me!
         home.stateVersion = "22.11";
@@ -46,7 +42,6 @@
       specialArgs = { inherit inputs; };
       modules = [ ({ config, ... }: {
         imports = [ inputs.sys.nixosModules.default ];
-        _module.args = { unstable = import inputs.nixpkgs-unstable { inherit system; inherit (config.nixpkgs) config overlays; }; };
         system.stateVersion = "22.11";
       }) ];
     };
