@@ -11,7 +11,7 @@
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixpkgs.url = "github:NixOS/nixpkgs/..."; # TODO: update me! (e.g. `nixos-22.11`, `nixpkgs-22.11-darwin`)
+    nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"; # TODO: update me! (e.g. on darwin, `nixpkgs-unstable`)
 
     sys.url = "git+https://codeberg.org/keysmashes/sys.git";
   };
